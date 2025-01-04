@@ -27,7 +27,7 @@ function test(wcheck) {
 }
 
 // Googleスプレッドシートからコメントを取得して表示
-d3.csv("https://docs.google.com/spreadsheets/d/【スプレッドシートのID】/export?format=csv&range=A3:D", function (error, data) {
+d3.csv("https://docs.google.com/spreadsheets/d/1OQCCh3n6TkrT5MeJtmDsHRx6d2Yoc-LeMUnIxbc97Jo/export?format=csv&range=A3:D", function (error, data) {
     if (error) {
         console.error("CSV読み込み中にエラーが発生しました:", error);
         return;
