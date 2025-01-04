@@ -1,3 +1,5 @@
+let submitted = false; // 変数の場合
+
 // 簡易的なNGワードの設定
 var NGComments = ["死ね", "バカ", ".exe"];
 var regex = new RegExp(NGComments.join("|"));
