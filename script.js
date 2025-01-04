@@ -25,3 +25,18 @@ function test(wcheck) {
 
     return submitted = true;
 }
+
+// Googleスプレッドシートからコメントを取得して表示
+d3.csv("https://docs.google.com/spreadsheets/d/【スプレッドシートのID】/export?format=csv&range=A3:D", function (error, data) {
+    if (error) {
+        console.error("CSV読み込み中にエラーが発生しました:", error);
+        return;
+    }
+
+    let text = "";
+    for (let i = 0; i < data.length; i++) {
+        text += `${i + 1} 名前: <a href="mailto:${data[i].Mail}">${data[i].Name}</a> ${data[i].Timestamp}<pre>${data[i].Comments}</pre>`;
+    }
+
+    d3.select("#comments").html(text);
+});
