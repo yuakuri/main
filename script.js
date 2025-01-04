@@ -38,5 +38,5 @@ d3.csv("https://docs.google.com/spreadsheets/d/1OQCCh3n6TkrT5MeJtmDsHRx6d2Yoc-Le
         text += `${i + 1} 名前: <a href="mailto:${data[i].Mail}">${data[i].Name}</a> ${data[i].Timestamp}<pre>${data[i].Comment}</pre>`;
     }
 
-    d3.select("#comment").html(text);
+    d3.select("#comments").html(text);
 });
