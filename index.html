@@ -46,19 +46,24 @@
             <p><textarea name="entry.1443044818" placeholder="コメント" rows="10" cols="40" maxlength="400" id="wcheck" required></textarea></p>
             <input type="submit" id="submitbutton" value="送信">
         </form>
-        <iframe onload='if(submitted){window.location="";}' id="hidden_iframe" name="hidden_iframe" style="display:none;"></iframe>
-<div id="comments"></div>
-<script>
-    let submitted = false; // フォーム送信済みかを管理
+        <iframe onload='if(window.submitted){window.location="";}' id="hidden_iframe" name="hidden_iframe" style="display:none;"></iframe>
+        <div id="comments"></div>
 
-    function test(wcheckValue) {
-        if (!wcheckValue.trim()) {
-            alert("コメントが必要です。");
-            return false; // フォーム送信を中止
-        }
-        submitted = true; // フォーム送信済みに設定
-        return true; // フォーム送信を許可
-    }
+        <script>
+       (function() {
+       // フォーム送信済みフラグ
+       window.submitted = false;
+
+       // フォーム送信時の処理
+       window.test = function(wcheckValue) {
+           if (!wcheckValue.trim()) {
+               alert("コメントが必要です。");
+               return false;
+           }
+           window.submitted = true;
+           return true;
+           };
+       })();
 </script>
     </div>
 </body>
