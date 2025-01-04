@@ -47,7 +47,19 @@
             <input type="submit" id="submitbutton" value="送信">
         </form>
         <iframe onload='if(submitted){window.location="";}' id="hidden_iframe" name="hidden_iframe" style="display:none;"></iframe>
-        <div id="comments"></div>
+<div id="comments"></div>
+<script>
+    let submitted = false; // フォーム送信済みかを管理
+
+    function test(wcheckValue) {
+        if (!wcheckValue.trim()) {
+            alert("コメントが必要です。");
+            return false; // フォーム送信を中止
+        }
+        submitted = true; // フォーム送信済みに設定
+        return true; // フォーム送信を許可
+    }
+</script>
     </div>
 </body>
 </html>
