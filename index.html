@@ -48,23 +48,6 @@
         </form>
         <iframe onload='if(window.submitted){window.location="";}' id="hidden_iframe" name="hidden_iframe" style="display:none;"></iframe>
         <div id="comments"></div>
-
-        <script>
-       (function() {
-       // フォーム送信済みフラグ
-       window.submitted = false;
-
-       // フォーム送信時の処理
-       window.test = function(wcheckValue) {
-           if (!wcheckValue.trim()) {
-               alert("コメントが必要です。");
-               return false;
-           }
-           window.submitted = true;
-           return true;
-           };
-       })();
-</script>
     </div>
 </body>
 </html>
